@@ -9,6 +9,11 @@
 		public Vector2 max => center + halfSize;
 		public Vector2 min => center - halfSize;
 
-		private Vector2 halfSize => ((RectTransform)transform).sizeDelta / 2f;
+		protected Vector2 halfSize => ((RectTransform)transform).sizeDelta / 2f;
+
+		protected virtual void OnDrawGizmos()
+		{
+			GizmosHelper.DrawBox(min, max, Color.white);
+		}
 	}
 }
