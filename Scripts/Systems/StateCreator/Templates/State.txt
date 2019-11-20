@@ -1,0 +1,13 @@
+﻿namespace #NAMESPACE#
+{
+	using UnityEngine;
+
+	public class #ROOT_NAME##STATE_NAME# : CharacterState<#ROOT_NAME#Controller>
+	{
+		public override void SetReferenceToCharacter(#ROOT_NAME#Controller parent)
+		{
+			base.SetReferenceToCharacter(parent);
+			parent.states.#STATE_NAME_LOWER# = this;
+		}
+	}
+}

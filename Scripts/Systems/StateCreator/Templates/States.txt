@@ -1,0 +1,7 @@
+﻿namespace #NAMESPACE#
+{
+	public class #ROOT_NAME#States
+	{
+		#STATE#;
+	}
+}

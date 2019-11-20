@@ -1,0 +1,27 @@
+﻿namespace #NAMESPACE#
+{
+	using UnityEngine;
+
+	public class #ROOT_NAME#Logic : MonoBehaviour, ICharacterReceiver<#ROOT_NAME#Controller>
+	{
+		private #ROOT_NAME#Controller parent;
+		private #ROOT_NAME#States states;
+
+		#STATE_CONDITION#;
+
+		public void SetReferenceToCharacter(#ROOT_NAME#Controller parent)
+		{
+			this.parent = parent;
+			states = parent.states;
+
+			parent.logic = this;
+		}
+
+		private void Update()
+		{
+			#STATE_SET_ACTIVE#;
+
+			#STATE_UPDATE#;
+		}
+	}
+}

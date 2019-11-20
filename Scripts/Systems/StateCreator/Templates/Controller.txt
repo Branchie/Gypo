@@ -1,0 +1,10 @@
+﻿namespace #NAMESPACE#
+{
+	using UnityEngine;
+
+	public class #ROOT_NAME#Controller : CharacterBase
+	{
+		[HideInInspector] public #ROOT_NAME#Logic logic;
+		[HideInInspector] public #ROOT_NAME#States states;
+	}
+}
