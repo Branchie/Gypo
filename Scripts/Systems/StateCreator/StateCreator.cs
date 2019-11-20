@@ -16,7 +16,7 @@
 			public TextAsset state;
 			public TextAsset states;
 
-			public Templates()
+			public void Load()
 			{
 				controller	= Load<TextAsset>(Constants.GUID_TEMPLATE_CONTROLLER);
 				logic		= Load<TextAsset>(Constants.GUID_TEMPLATE_LOGIC);
@@ -44,7 +44,10 @@
 		private void OnGUI()
 		{
 			if (templates == null)
+			{
 				templates = new Templates();
+				templates.Load();
+			}
 
 			SerializedObject serializedObject = new SerializedObject(this);
 
