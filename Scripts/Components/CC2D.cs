@@ -159,7 +159,7 @@
 		public bool CheckVertical(float distance)
 		{
 			Vector2 dir = new Vector2(0, System.Math.Sign(distance));
-			float dist = distance + halfSkinWidth.y;
+			float dist = Mathf.Abs(distance) + halfSkinWidth.y;
 
 			if (velocity.y > 0.1f)
 				return Physics2D.BoxCast(center, adjustedSize, 0, dir, dist, layerMask).transform;
@@ -170,7 +170,7 @@
 		public bool CheckHorizontal(float distance)
 		{
 			Vector2 dir = new Vector2(System.Math.Sign(distance), 0);
-			float dist = distance + halfSkinWidth.x;
+			float dist = Mathf.Abs(distance) + halfSkinWidth.x;
 
 			RaycastHit2D hit = Physics2D.BoxCast(center, adjustedSize, 0, dir, dist, layerMask);
 			return hit.transform;
