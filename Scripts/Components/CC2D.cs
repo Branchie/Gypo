@@ -17,6 +17,8 @@
 
 		private int layerMask = 1 << 0;
 		private Vector2 center;
+		private Vector2 _colOffset;
+		private Vector2 _colSize;
 
 		private Vector2 adjustedSize => size - skinWidth;
 		private Vector2 halfSize => col.bounds.extents;
@@ -35,6 +37,9 @@
 			col = GetComponent<BoxCollider2D>();
 			collisionState = new CollisionState();
 			ignoredPlatforms = new List<Collider2D>();
+
+			_colOffset = col.offset;
+			_colSize = col.size;
 		}
 
 		public Vector2 Move(Vector2 deltaMovement)
@@ -149,6 +154,30 @@
 				float.Epsilon,
 				layers
 			).transform == null;
+		}
+
+		public void SetColliderSize(Vector2 size, Vector2 offset)
+		{
+			col.size = size;
+			col.offset = offset;
+		}
+
+		public void SetRelativeColliderSize(float x, float y)
+		{
+			col.size = new Vector2(_colSize.x * x, _colSize.y * y);
+			col.offset = new Vector2(_colOffset.x * x, _colOffset.y * y);
+		}
+
+		public void MultiplyColliderSize(float x, float y)
+		{
+			col.size = new Vector2(col.size.x * x, col.size.y * y);
+			col.offset = new Vector2(col.offset.x * x, col.offset.y * y);
+		}
+
+		public void ResetColliderSize()
+		{
+			col.size = _colSize;
+			col.offset = _colOffset;
 		}
 
 		[System.Serializable]
