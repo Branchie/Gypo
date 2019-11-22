@@ -158,6 +158,7 @@
 
 		public bool CheckVertical(float distance)
 		{
+			Vector2 center = position + offset;
 			Vector2 dir = new Vector2(0, System.Math.Sign(distance));
 			float dist = Mathf.Abs(distance) + halfSkinWidth.y;
 
@@ -169,6 +170,7 @@
 
 		public bool CheckHorizontal(float distance)
 		{
+			Vector2 center = position + offset;
 			Vector2 dir = new Vector2(System.Math.Sign(distance), 0);
 			float dist = Mathf.Abs(distance) + halfSkinWidth.x;
 
