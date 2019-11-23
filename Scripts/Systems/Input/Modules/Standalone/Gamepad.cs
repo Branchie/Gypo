@@ -743,6 +743,8 @@ namespace Gypo.Input
 
 #pragma warning restore 0414
 
+#if UNITY_EDITOR
+
 namespace Gypo.Input.Standalone.Editor
 {
 	using UnityEditor;
@@ -777,3 +779,5 @@ namespace Gypo.Input.Standalone.Editor
 		}
 	}
 }
+
+#endif
