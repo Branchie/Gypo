@@ -1,4 +1,4 @@
-﻿namespace Gypo.StateCreator
+﻿namespace Gypo.Editor.StateCreator
 {
 	public static class Constants
 	{

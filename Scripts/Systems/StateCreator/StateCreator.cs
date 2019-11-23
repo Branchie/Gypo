@@ -1,4 +1,4 @@
-﻿namespace Gypo.StateCreator
+﻿namespace Gypo.Editor.StateCreator
 {
 	using System.Collections.Generic;
 	using System.IO;

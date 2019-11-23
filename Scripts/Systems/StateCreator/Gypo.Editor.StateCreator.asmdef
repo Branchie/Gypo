@@ -1,5 +1,5 @@
 {
-    "name": "Gypo.StateCreator",
+    "name": "Gypo.Editor.StateCreator",
     "references": [],
     "includePlatforms": [
         "Editor"
