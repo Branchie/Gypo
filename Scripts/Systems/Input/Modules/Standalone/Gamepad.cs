@@ -586,7 +586,7 @@ namespace Gypo.Input
 					return GetAxis(Axis.DPadX, controllerIndex) > 0.5f;
 
 				case Button.LeftStickDown:
-					return GetAxis(Axis.LeftStickY, controllerIndex) < -0.5f;
+					return GetAxis(Axis.LeftStickY, controllerIndex) > 0.5f;
 
 				case Button.LeftStickLeft:
 					return GetAxis(Axis.LeftStickX, controllerIndex) < -0.5f;
@@ -595,7 +595,7 @@ namespace Gypo.Input
 					return GetAxis(Axis.LeftStickX, controllerIndex) > 0.5f;
 
 				case Button.LeftStickUp:
-					return GetAxis(Axis.LeftStickY, controllerIndex) > 0.5f;
+					return GetAxis(Axis.LeftStickY, controllerIndex) < -0.5f;
 
 				case Button.RightStickDown:
 					return GetAxis(Axis.RightStickY, controllerIndex) < -0.5f;
