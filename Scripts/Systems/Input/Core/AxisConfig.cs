@@ -25,5 +25,12 @@ namespace Gypo.Input
 
 			return result;
 		}
+
+		public void SetControllerID(int controllerID)
+		{
+#if STANDALONE
+			standalone.SetControllerID(controllerID);
+#endif
+		}
 	}
 }

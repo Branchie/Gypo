@@ -10,6 +10,8 @@
 		[SerializeField] private AxisConfig[] axis = default;
 		[SerializeField] private ButtonConfig[] buttons = default;
 
+		public int controllerID { get; private set; } = 0;
+
 		public float GetAxis(string axis)
 		{
 			if (TryGetAxisConfig(axis, out AxisConfig result))
@@ -64,6 +66,17 @@
 					return buttonConfig;
 
 			return null;
+		}
+
+		public void SetControllerID(int controllerID)
+		{
+			this.controllerID = controllerID;
+
+			foreach (AxisConfig a in axis)
+				a.SetControllerID(controllerID);
+
+			foreach (ButtonConfig b in buttons)
+				b.SetControllerID(controllerID);
 		}
 
 		private bool TryGetAxisConfig(string name, out AxisConfig result) => (result = GetAxisConfig(name)) != null;
