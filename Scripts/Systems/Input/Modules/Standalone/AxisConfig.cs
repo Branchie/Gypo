@@ -16,23 +16,32 @@
 		{
 			float val = 0;
 
-			// KeyCodes
-			foreach (KeyCodeAxis key in keys)
-				val += key.Get();
+			if (controllerID <= 0)
+			{
+				// KeyCodes
+				foreach (KeyCodeAxis key in keys)
+					val += key.Get();
+			}
 
-			// Gamepad Axis
-			foreach (Gamepad.Axis a in axis)
-				val += Gamepad.GetAxis(a, controllerID);
+			if (controllerID >= 0)
+			{
+				// Gamepad Axis
+				foreach (Gamepad.Axis a in axis)
+					val += Gamepad.GetAxis(a, controllerID);
 
-			// Gamepad Buttons
-			foreach (GamepadButtonAxis button in buttons)
-				val += button.Get();
+				// Gamepad Buttons
+				foreach (GamepadButtonAxis button in buttons)
+					val += button.Get();
+			}
 
 			val = Mathf.Clamp(val, -1, 1);
 
-			// Raw Axis
-			foreach (string r in raw)
-				val += Input.GetAxisRaw(r);
+			if (controllerID <= 0)
+			{
+				// Raw Axis
+				foreach (string r in raw)
+					val += Input.GetAxisRaw(r);
+			}
 
 			return val;
 		}

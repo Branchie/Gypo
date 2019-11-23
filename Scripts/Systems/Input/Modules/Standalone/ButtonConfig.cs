@@ -12,13 +12,19 @@
 
 		public bool Get()
 		{
-			foreach (KeyCode key in keys)
-				if (Input.GetKey(key))
-					return true;
+			if (controllerID <= 0)
+			{
+				foreach (KeyCode key in keys)
+					if (Input.GetKey(key))
+						return true;
+			}
 
-			foreach (Gamepad.Button button in buttons)
-				if (Gamepad.GetButton(button, controllerID))
-					return true;
+			if (controllerID >= 0)
+			{
+				foreach (Gamepad.Button button in buttons)
+					if (Gamepad.GetButton(button, controllerID))
+						return true;
+			}
 
 			return false;
 		}
