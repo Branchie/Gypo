@@ -10,6 +10,8 @@
 
 		private T[] data;
 
+		public int count { get; private set; }
+
 		public T this[int index]
 		{
 			get => data[index];
@@ -28,8 +30,9 @@
 				if (data[i] == null)
 				{
 					data[i] = item;
-					onChanged();
+					count++;
 
+					onChanged();
 					return i;
 				}
 			}
@@ -43,8 +46,9 @@
 				return false;
 
 			data[index] = null;
-			onChanged();
+			count--;
 
+			onChanged();
 			return true;
 		}
 
@@ -72,6 +76,15 @@
 			}
 
 			return false;
+		}
+
+		public void Clear()
+		{
+			for (int i = 0; i < data.Length; i++)
+				data[i] = null;
+
+			count = 0;
+			onChanged();
 		}
 
 		public IEnumerator<T> GetEnumerator() => ((IEnumerable<T>)data).GetEnumerator();
