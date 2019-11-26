@@ -18,6 +18,9 @@
 		{
 			activeTime = offset;
 
+			if (interval < 0.01f)
+				interval = 0.01f;
+
 			ResetManager.Register(this, resetKey);
 			SuspensionManager.Register(this, suspensionKey);
 		}
@@ -35,7 +38,7 @@
 
 			activeTime += Time.deltaTime;
 
-			if (activeTime >= interval)
+			while (activeTime >= interval)
 			{
 				OnBlink();
 				activeTime -= interval;
