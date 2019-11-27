@@ -12,5 +12,20 @@
 
 			return false;
 		}
+
+		public static bool TryFindIndex<T>(this T[] arr, T element, out int result)
+		{
+			for (int i = 0; i < arr.Length; i++)
+			{
+				if (ReferenceEquals(arr[i], element))
+				{
+					result = i;
+					return true;
+				}
+			}
+
+			result = -1;
+			return false;
+		}
 	}
 }
