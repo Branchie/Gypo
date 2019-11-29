@@ -1,8 +1,8 @@
 ﻿namespace Gypo
 {
-	public static class Layers
+	public static partial class Layers
 	{
-		public static class Bitwise
+		public static partial class Bitwise
 		{
 			public const int DEFAULT			= 1 << 0;
 			public const int TRANSPARENT_FX		= 1 << 1;
@@ -14,7 +14,7 @@
 			public const int PLATFORM			= 1 << 10;
 		}
 
-		public static class Integer
+		public static partial class Integer
 		{
 			public const int DEFAULT			= 0;
 			public const int TRANSPARENT_FX		= 1;
