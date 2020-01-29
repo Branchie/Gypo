@@ -1,4 +1,4 @@
-﻿namespace Gypo
+﻿namespace Gypo.Editor
 {
 	using UnityEditor;
 	using UnityEngine;
