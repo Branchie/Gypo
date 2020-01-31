@@ -1,6 +1,8 @@
 {
     "name": "Gypo.Editor",
-    "references": [],
+    "references": [
+        "GUID:9e81ee5d71d6d214cbea17759e728999"
+    ],
     "includePlatforms": [
         "Editor"
     ],
@@ -10,5 +12,6 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": []
+    "versionDefines": [],
+    "noEngineReferences": false
 }
