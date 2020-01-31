@@ -18,8 +18,8 @@
 
 		public event System.Action<State> onStateChanged = delegate { };
 
-		[SerializeField] private Image image;
-		[SerializeField] private UnityEvent onClicked;
+		[SerializeField] private Image image			= default;
+		[SerializeField] private UnityEvent onClicked	= default;
 
 		public State state
 		{

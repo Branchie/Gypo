@@ -5,9 +5,9 @@
 
 	public class GypoButtonSpriteSwap : GypoButtonComponent
 	{
-		[SerializeField] private Sprite highlighted;
-		[SerializeField] private Sprite pressed;
-		[SerializeField] private Sprite disabled;
+		[SerializeField] private Sprite highlighted		= default;
+		[SerializeField] private Sprite pressed			= default;
+		[SerializeField] private Sprite disabled		= default;
 
 		private Sprite defaultSprite;
 
