@@ -31,6 +31,7 @@
 		private Vector2 position => transform.position;
 
 		public BoxCollider2D col { get; private set; }
+		public CollisionState prevCollisionState { get; private set; }
 
 		private void Awake()
 		{
@@ -44,7 +45,7 @@
 
 		public Vector2 Move(Vector2 deltaMovement)
 		{
-			CollisionState prevState = new CollisionState(collisionState);
+			prevCollisionState = new CollisionState(collisionState);
 			collisionState.Reset();
 
 			if (!ignoreCollisions)
@@ -62,7 +63,7 @@
 
 			velocity = deltaMovement / Time.deltaTime;
 
-			if (collisionState.down && !prevState.down)
+			if (collisionState.down && !prevCollisionState.down)
 				onLanded();
 
 			return velocity;
