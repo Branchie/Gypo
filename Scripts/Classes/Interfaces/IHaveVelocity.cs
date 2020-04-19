@@ -4,6 +4,6 @@
 
 	public interface IHaveVelocity
 	{
-		Vector2 velocity { get; }
+		Vector2 velocity { get; set; }
 	}
 }
