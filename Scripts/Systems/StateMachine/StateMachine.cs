@@ -79,6 +79,31 @@
 			return result;
 		}
 
+		public TransitionManager AddTransition<T>(ITransition transition) where T : ITrigger
+		{
+			return GetOrAddTransitionManager<T>().AddTransition(transition);
+		}
+
+		public TransitionManager AddTransition<T>(IState from, IState to) where T : ITrigger
+		{
+			return GetOrAddTransitionManager<T>().AddTransition(from, to);
+		}
+
+		public TransitionManager AddTransition<T>(IState from, IState to, Action action) where T : ITrigger
+		{
+			return GetOrAddTransitionManager<T>().AddTransition(from, to, action);
+		}
+
+		public TransitionManager AddTransition<T>(IState from, IState to, Func<bool> condition) where T : ITrigger
+		{
+			return GetOrAddTransitionManager<T>().AddTransition(from, to, condition);
+		}
+
+		public TransitionManager AddTransition<T>(IState from, IState to, Func<bool> condition, Action action) where T : ITrigger
+		{
+			return GetOrAddTransitionManager<T>().AddTransition(from, to, condition, action);
+		}
+
 		public void Reset()
 		{
 			ChangeState(defaultState);
