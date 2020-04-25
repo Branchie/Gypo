@@ -4,7 +4,7 @@
 	{
 		protected T parent;
 
-		public State(T parent)
+		public virtual void Init(T parent)
 		{
 			this.parent = parent;
 		}
